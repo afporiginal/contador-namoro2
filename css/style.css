@@ -1,71 +1,147 @@
-/* Estilos para o footer modernizado */
-footer {
-  background-color: #2c2c2c;
-  color: #f1f1f1;
-  padding: 40px 20px;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(to right, #f7e9f0, #e6f0ff);
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.navbar {
+  background-color: #4a148c;
+  padding: 20px;
   text-align: center;
-  font-size: 1rem;
-  border-radius: 20px 20px 0 0;
-  margin-top: 60px;
+  color: white;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+}
+
+.main-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content {
+  width: 100%;
+  max-width: 600px;
+  padding: 30px 20px;
+}
+
+.card {
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card h2 {
+  font-size: 1.8rem;
+  color: #6a1b9a;
+  margin-bottom: 10px;
+}
+
+.card p {
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+input[type="datetime-local"] {
+  padding: 12px 15px;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: #6a1b9a;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  font-size: 1.1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #8e24aa;
+}
+
+.tempo {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.quote {
+  margin-top: 40px;
+  font-style: italic;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #880e4f;
   position: relative;
 }
 
-footer strong {
-  color: #ff80ab;
-  font-size: 1.2rem;
-  font-weight: bold;
+#carolSecret {
+  cursor: pointer;
+  color: inherit;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+#carolSecret::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 30px;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#easterEgg {
+  margin-top: 30px;
+  display: none;
+  animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+.easter-content {
+  background: #fce4ec;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+footer {
+  background-color: #2e2e3e;
+  color: white;
+  text-align: center;
+  padding: 20px;
 }
 
 footer a {
   color: #90caf9;
   text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-  margin: 10px;
 }
 
 footer a:hover {
-  color: #ff80ab;
-}
-
-footer .contact-info {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  margin-top: 20px;
-}
-
-footer .contact-info a {
-  display: flex;
-  align-items: center;
-  font-size: 1.1rem;
-  color: inherit;
-  text-decoration: none;
-}
-
-footer .contact-info a:hover {
-  color: #ff80ab;
-}
-
-footer .contact-info i {
-  font-size: 1.5rem;
-  margin-right: 8px;
-}
-
-footer .social-media {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  margin-top: 20px;
-}
-
-footer .social-media a {
-  color: #f1f1f1;
-  font-size: 1.5rem;
-  transition: color 0.3s ease;
-}
-
-footer .social-media a:hover {
-  color: #ff80ab;
+  text-decoration: underline;
 }
