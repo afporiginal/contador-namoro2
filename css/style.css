@@ -1,52 +1,45 @@
+/* Reset básico */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   font-family: 'Roboto', sans-serif;
-  background: linear-gradient(to right, #f7e9f0, #e6f0ff);
-  color: #333;
+  background: linear-gradient(135deg, #fdf0f3, #e1f0ff);
+  color: #2c2c2c;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
 }
 
-.navbar {
-  background-color: #4a148c;
-  padding: 20px;
-  text-align: center;
-  color: white;
-  font-family: 'Playfair Display', serif;
-  font-size: 1.8rem;
-}
-
+/* Container principal */
 .main-container {
-  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.content {
-  width: 100%;
-  max-width: 600px;
+  justify-content: center;
+  flex: 1;
   padding: 30px 20px;
 }
 
+/* Card principal */
 .card {
-  background-color: white;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  background: white;
+  padding: 40px;
+  border-radius: 24px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
   text-align: center;
+  width: 100%;
+  max-width: 600px;
+  animation: fadeInUp 1s ease;
 }
 
 .card h2 {
-  font-size: 1.8rem;
-  color: #6a1b9a;
-  margin-bottom: 10px;
+  font-size: 2rem;
+  color: #7b1fa2;
+  margin-bottom: 15px;
 }
 
 .card p {
@@ -55,50 +48,59 @@ body {
 }
 
 input[type="datetime-local"] {
-  padding: 12px 15px;
+  padding: 12px 18px;
   font-size: 1rem;
-  border: 2px solid #ccc;
-  border-radius: 8px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
   width: 100%;
   margin-bottom: 20px;
+  transition: border 0.3s ease;
+}
+
+input[type="datetime-local"]:focus {
+  border-color: #7b1fa2;
+  outline: none;
 }
 
 button {
-  background-color: #6a1b9a;
+  padding: 12px 30px;
+  background: linear-gradient(45deg, #7b1fa2, #ba68c8);
   color: white;
-  padding: 12px 25px;
   border: none;
+  border-radius: 30px;
   font-size: 1.1rem;
-  border-radius: 25px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background 0.3s ease;
 }
 
 button:hover {
-  background-color: #8e24aa;
+  background: linear-gradient(45deg, #6a1b9a, #ab47bc);
 }
 
+/* Resultado */
 .tempo {
   margin-top: 20px;
   font-size: 1.2rem;
-  color: #333;
+  font-weight: bold;
+  color: #424242;
 }
 
+/* Frase com o easter egg */
 .quote {
-  margin-top: 40px;
-  font-style: italic;
+  margin-top: 50px;
   text-align: center;
-  font-size: 1.1rem;
-  color: #880e4f;
-  position: relative;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #4a148c;
+  animation: fadeIn 1.2s ease-in;
 }
 
 #carolSecret {
   cursor: pointer;
-  color: inherit;
   background: none;
   border: none;
-  outline: none;
+  color: inherit;
+  position: relative;
 }
 
 #carolSecret::after {
@@ -111,30 +113,42 @@ button:hover {
   transform: translateX(-50%);
 }
 
+/* Easter Egg Box */
 #easterEgg {
-  margin-top: 30px;
   display: none;
-  animation: fadeIn 0.8s ease-in-out forwards;
+  margin-top: 40px;
+  animation: fadeInUp 1s ease;
 }
 
 .easter-content {
-  background: #fce4ec;
-  padding: 20px;
-  border-radius: 15px;
+  background: #fff8f9;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
   text-align: center;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  max-width: 600px;
+  margin: auto;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
+.easter-content h3 {
+  font-size: 1.5rem;
+  color: #c2185b;
+  margin-bottom: 10px;
 }
 
+/* Footer moderno */
 footer {
-  background-color: #2e2e3e;
-  color: white;
+  background-color: #1f1b24;
+  color: #f5f5f5;
+  padding: 40px 20px;
   text-align: center;
-  padding: 20px;
+  font-size: 1rem;
+  margin-top: 80px;
+  border-top: 2px solid #7b1fa2;
+}
+
+footer strong {
+  color: #ff80ab;
 }
 
 footer a {
@@ -144,4 +158,15 @@ footer a {
 
 footer a:hover {
   text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
